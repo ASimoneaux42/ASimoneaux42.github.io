@@ -11,8 +11,6 @@ var highScoreElement = $("#highScore");
 
 // TODO 4a: Create the snake, apple and score variables
 // Game Variables
-var row
-var column
 var snake = {}
 var apple = {}
 var score = 0
@@ -114,7 +112,7 @@ function moveSnake() {
   
   //TODO 11: Move each part of the snake's body such that it's body follows the head.
   for (var index = snake.body.length - 1; index > 0; index --) {
-    var snakeSquare = snake.body[index - 1];
+    var snakeSquare = snake.body[index];
 
     var nextSnakeSquare = snake.body[index - 1];
     var nextRow = nextSnakeSquare.Row;
@@ -142,13 +140,13 @@ function moveSnake() {
   if (snake.head.direction === "left") {
     snake.head.column = snake.head.column - 1;
   }
-  if (snake.head.direction === "right") {
+  else if (snake.head.direction === "right") {
     snake.head.column = snake.head.column + 1;
   }
-  if (snake.head.direction === "up") {
+  else if (snake.head.direction === "up") {
     snake.head.row = snake.head.row - 1;
   }
-  if (snake.head.direction === "down") {
+  else if (snake.head.direction === "down") {
     snake.head.row = snake.head.row + 1;
   }
   repositionSquare(snake.head);
@@ -218,14 +216,16 @@ function handleAppleCollision() {
   If the tail is moving "down", place the next snakeSquare above it.
   etc...
   */
-  if (snake.tail.direction == "left")
+  var row = snake.tail.row + 0;
+  var column = snake.tail.column + 0;
+  if (snake.tail.direction == "right")
     SnakeSquare.Column = snake.tail.column - 1
-  else if (snake.tail.direction == "right")
+  else if (snake.tail.direction == "left")
     SnakeSquare.Column = snake.tail.column + 1
   else if (snake.tail.direction == "up")
     SnakeSquare.Row = snake.tail.row - 1
   else if (snake.tail.direction == "down")
-    nextSnakeSquare.Row = snake.tail.row + 1
+    SnakeSquare.Row = snake.tail.row + 1
   // code to determine the row and column of the snakeSquare to add to the snake
 
   makeSnakeSquare(row, column);
