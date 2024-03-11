@@ -38,11 +38,28 @@ $(document).ready(function () {
   /////////////////////////////////////////////////
 
   // TODO 1: create a new shape object and add it to the array
-
+  var shape = {}
+  shape.color = "blue"
+  shape.shape = "circle"
+  shape.repeat = 3
   // TODO 2: add a new property to all data shape
-
+  for (currentIndex = 0; currentIndex > dataShapes.length - 1; currentIndex++){
+    var currentShape = dataShapes[currentIndex]
+    if (currentShape.color = "red"){
+      currentShape.goodBehavior = "bounce"
+    }
+    if (currentShape.color = "blue"){
+      currentShape.goodBehavior = "blink"
+    }
+    else{
+      currentShape.goodBehavior = "spin"
+    }
+  }
   // TODO 3-a: add a function that handles the static display type
-
+  function handleStatic(data){
+    setBackgroundWithObject(data)
+    animationDetails.displayType = 1
+  }
   // TODO 4-a: add a function that handles the good display type
 
 
@@ -55,7 +72,7 @@ $(document).ready(function () {
 
   function staticDisplay() {
     // TODO 3-b: call your handleStatic function
- 
+    handleStatic(dataShapes[currentIndex])
     
     // TODO 4-b: call your handleGood function
 

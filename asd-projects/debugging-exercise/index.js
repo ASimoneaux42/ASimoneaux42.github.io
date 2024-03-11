@@ -128,7 +128,8 @@ $(document).ready(function(){
         }
         // this bounces off the top wall
         if (circle.y < 0){
-            circle.y -= circle.speedY;
+            circle.y -= circle.speedY
+
             circle.speedY *= -1;
         }
         // this bounces off the bottom wall
