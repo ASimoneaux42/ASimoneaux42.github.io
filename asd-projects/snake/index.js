@@ -102,7 +102,7 @@ function checkForNewDirection(event) {
   if (activeKey === KEY.DOWN) {
     snake.head.direction = "down";
   }
-  console.log(snake.head.direction);
+
   // FILL IN THE REST
 
   //console.log(snake.head.direction);     // uncomment me!
@@ -115,8 +115,8 @@ function moveSnake() {
     var snakeSquare = snake.body[index];
 
     var nextSnakeSquare = snake.body[index - 1];
-    var nextRow = nextSnakeSquare.Row;
-    var nextColumn = nextSnakeSquare.Column;
+    var nextRow = nextSnakeSquare.row;
+    var nextColumn = nextSnakeSquare.column;
     var nextDirection = nextSnakeSquare.Direction;
 
     snakeSquare.direction = nextDirection;
@@ -240,7 +240,8 @@ function hasCollidedWithSnake() {
   
   */
   if (snake.head.row == snake.body.row && snake.head.column == snake.body.column)
-    return true
+    if (index > 0)
+      return true
   else
     return false;
 }
