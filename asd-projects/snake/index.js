@@ -167,7 +167,8 @@ function hasHitWall() {
     return true
   if (snake.head.column < 0)
     return true
-  
+  else
+    return false
   //ROWS; // the total number of ROWS in the board
   //COLUMNS; // the total number of COLUMNS in the board
   //snake.head.row; // the current row of snake.head
@@ -187,8 +188,6 @@ function hasCollidedWithApple() {
     return false
   //HINT: Both the apple and the snake's head are aware of their own row and column
   
-
-  return false;
 }
 
 function handleAppleCollision() {
