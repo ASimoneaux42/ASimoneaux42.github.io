@@ -80,10 +80,10 @@ function update() {
 function moveSnake() {
   
   //TODO 11: Move each part of the snake's body such that it's body follows the head.
-  for (var index = snake.body.length - 1; index > 0; index --) {
-    var snakeSquare = snake.body[index];
+  for (var i = snake.body.length - 1; i > 0; i --) {
+    var snakeSquare = snake.body[i];
 
-    var nextSnakeSquare = snake.body[index - 1];
+    var nextSnakeSquare = snake.body[i - 1];
     var nextRow = nextSnakeSquare.row;
     var nextColumn = nextSnakeSquare.column;
     var nextDirection = nextSnakeSquare.direction;
@@ -218,11 +218,16 @@ function hasCollidedWithSnake() {
   /* 
   TODO 12: Should return true if the snake's head has collided with any part of the
   snake's body.
-  
   HINT: Each part of the snake's body is stored in the snake.body Array. The
   head and each part of the snake's body also knows its own row and column.
-  
   */
+  for (var i = snake.body.length - 1; i > 0; i --) {
+    if (snake.head.column == snake.body[i].column && snake.body[i].row == snake.head.row)
+      return true
+  }
+  
+
+
 
 }
 function hasHitWall() {
@@ -336,6 +341,7 @@ function getRandomAvailablePosition() {
     not occupied by a snakeSquare in the snake's body. If it is then set 
     spaceIsAvailable to false so that a new position is generated.
     */
+   // If snake body I row == random positon row and if snake body I column = random position column, space available = false
   }
 
   return randomPosition;
