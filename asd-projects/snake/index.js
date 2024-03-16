@@ -342,6 +342,7 @@ function getRandomAvailablePosition() {
     spaceIsAvailable to false so that a new position is generated.
     */
    // If snake body I row == random positon row and if snake body I column = random position column, space available = false
+
   }
 
   return randomPosition;
