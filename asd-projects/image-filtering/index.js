@@ -37,14 +37,19 @@ function applyFilter(filterFunction){
     
     for (var c = 0; c < image[r].length; c++) {
       image[r][c] = r * c
+      var rgbString = "rgb(150, 150, 150)"
+      var rgbNumbers = rgbStringToArray(rgbString)
+      rgbNumbers[RED] = 255
+      rgbString = rgbArrayToString(rgbNumbers)
+      image [r][c] = rgbString
     }
   }
 }
-//var rgbString = "rgb(150, 150, 150)"
-//var rgbNumbers = rgbStringToArray(rgbString)
-//rgbNumbers[RED] = 255
-//rgbString = rgbArrayToString(rgbNumbers)
-//image [0][0] = rgbString
+var rgbString = "rgb(150, 150, 150)"
+var rgbNumbers = rgbStringToArray(rgbString)
+rgbNumbers[RED] = 255
+rgbString = rgbArrayToString(rgbNumbers)
+image [0][0] = rgbString
 
 
 // TODO 7: Create the applyFilterNoBackground function

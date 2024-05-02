@@ -42,10 +42,10 @@ async function quickSort(array, left, right){
 async function partition(array, left, right){
     pivot = array[Math.floor((right + left)/2)].value;
     while (left < right){
-        while (array[left] < pivot){
+        while (pivot > array[left].value){
             left += 1
         }
-        while (array[right] > pivot){
+        while (pivot < array[right].value){
             right -= 1
         }
         if (left < right){
