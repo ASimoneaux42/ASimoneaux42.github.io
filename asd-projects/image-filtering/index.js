@@ -52,13 +52,21 @@ function applyFilter(filterFunction){
 
 
 // TODO 5: Create the keepInBounds function
-
+function keepInBounds(number) {
+  var result = (number < 0) ? 0 :
+          (number < 255) ? number : 255;
+  return(result);
+}
 
 // TODO 3: Create reddify function
 function reddify(reddification){
   reddification[RED] = 200
 }
 // TODO 6: Create more filter functions
+function decreaseBlue(antiblue){
+  antiblue[BLUE] = keepInBounds(antiblue[BLUE] - 50);
+}
+function increaseGreenByBlue(greenify){
+  greenify[GREEN] = keepInBounds (greenify[BLUE] + greenify[GREEN])
+}
 
-
-// CHALLENGE code goes below here
